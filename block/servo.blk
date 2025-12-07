@@ -1,0 +1,244 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+<block type="procedures_defnoreturn" id="WtpyD@tEu+EoY=P9iY,D" deletable="false" x="21" y="332">
+<field name="NAME">runOpMode</field>
+<comment pinned="false" h="141" w="577">This sample contains the bare minimum Blocks for any regular OpMode. The 3 blue
+Comment Blocks show where to place Initialization code (runs once, after touching the
+DS INIT button, and before touching the DS Start arrow), Run code (runs once, after
+touching Start), and Loop code (runs repeatedly while the OpMode is active, namely not
+Stopped).</comment>
+<data>{"commentPositionLeft":-20,"commentPositionTop":-169}</data>
+<statement name="STACK">
+<block type="linearOpMode_waitForStart" id=":`$wN_ci`O;o6P0~.(+g">
+<next>
+<block type="dcMotor_setProperty_Direction" id="z[X`Nv$@:1rp%Bm@kyPg">
+<field name="IDENTIFIER">_3AsDcMotor</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"3"}</data>
+<value name="VALUE">
+<shadow type="dcMotor_typedEnum_direction" id="W=c8S;Jf6-}XGW2ddOAV">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="servo_setProperty_Direction" id="Q4:CSV}ag[3tN8)_{,:N">
+<field name="IDENTIFIER">_0AsServo</field>
+<field name="PROP">Direction</field>
+<data>{"IDENTIFIER":"0"}</data>
+<value name="VALUE">
+<shadow type="servo_typedEnum_direction" id="?e.!Xyn9|zkYu.i6TqD8">
+<field name="DIRECTION">FORWARD</field>
+</shadow>
+</value>
+<next>
+<block type="controls_if" id="}Q?5mbxSO8Di;i!__6[y">
+<value name="IF0">
+<block type="linearOpMode_opModeIsActive" id=")o%YFX/#9kvv^sgXr4~5"/>
+</value>
+<statement name="DO0">
+<block type="servo_setProperty_Number" id="`e{m6grNP(#!l@k9=V8#">
+<field name="IDENTIFIER">_0AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Er}Zu]Q`!,|5TE~~Mll(">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="controls_whileUntil" id="~p[AYj0*kN.~R2?Z]:Qg">
+<field name="MODE">WHILE</field>
+<value name="BOOL">
+<block type="logic_boolean" id="`vBEmU=/TyCU8FDU44d[">
+<field name="BOOL">TRUE</field>
+</block>
+</value>
+<statement name="DO">
+<block type="servo_setProperty_Number" id="3e6:[imcmq;d3PrwuhSv">
+<field name="IDENTIFIER">_0AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="h]ScqlqdI?%lYb_6=d,6">
+<field name="NUM">0</field>
+</shadow>
+</value>
+<next>
+<block type="controls_if" id="6puCtOdDj0[3rR6UqJ?,">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="MY%Y^%pG4_9J2df~L~zH">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">A</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="controls_flow_statements" id="aQ7Z.iZ9hJXoTxR%_M:p">
+<field name="FLOW">BREAK</field>
+</block>
+</statement>
+<next>
+<block type="linearOpMode_sleep_Number" id=";f9h1*nNGDoQ(zTJu*49">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="ptuH{9n%.GIGEDv(-[$1">
+<field name="NUM">2000</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</statement>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</statement>
+</block>
+<block type="dcMotor_setProperty_Number" id="xza4.Q8(7CLffOwT}6ow" x="402" y="649">
+<field name="IDENTIFIER">_3AsDcMotor</field>
+<field name="PROP">Power</field>
+<data>{"IDENTIFIER":"3"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="bgS%1UhatX`$x9ahRMK5">
+<field name="NUM">1</field>
+</shadow>
+</value>
+</block>
+<block type="servo_setProperty_Number" id=":1{}xyMZunZ]NNGhk;YL" x="465" y="769">
+<field name="IDENTIFIER">_0AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="V.w#v/xP4HjdjrXdhhuF">
+<field name="NUM">90</field>
+</shadow>
+</value>
+<next>
+<block type="controls_if" id=",|I6i5?c/M?i,fUBLPrO">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="8N^wOQ16_5jxr!ko[-7K">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">A</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="controls_flow_statements" id="mGIIMb,Y|*F$`rL?8o5K" disabled="true">
+<field name="FLOW">BREAK</field>
+<data>{"block_warning_hidden":true,"block_warning_text":"Warning: This block may only be used within a loop."}</data>
+</block>
+</statement>
+<next>
+<block type="linearOpMode_sleep_Number" id=")vWy9s){J9;qgz{W)7$4">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="aqKN0`oGsVS4]0(;c$a*">
+<field name="NUM">2000</field>
+</shadow>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="nn0*%oo|ggke%$CC4R$f">
+<field name="IDENTIFIER">_0AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="EvOzuz,4w]}gOt`+P[bK">
+<field name="NUM">180</field>
+</shadow>
+</value>
+<next>
+<block type="controls_if" id="n@1j8%!NVEd+-)O]H}cs">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="H(^U]LdI[Id?eT}*{BLJ">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">A</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="controls_flow_statements" id="v7KbOOxRj$q{Z|rOiWQ`" disabled="true">
+<field name="FLOW">BREAK</field>
+<data>{"block_warning_hidden":true,"block_warning_text":"Warning: This block may only be used within a loop."}</data>
+</block>
+</statement>
+<next>
+<block type="linearOpMode_sleep_Number" id="{2Qn@mawak/C-=gh*XhP">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="qA_HNs@Ex}V4?y_V7HN^">
+<field name="NUM">2000</field>
+</shadow>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="XBq+8!bOuqMwwm|80!R$">
+<field name="IDENTIFIER">_0AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="ETcL`,*@GX-n6z][qT3U">
+<field name="NUM">270</field>
+</shadow>
+</value>
+<next>
+<block type="controls_if" id="vM[Sz6^)1T1^_I`s/}p@">
+<value name="IF0">
+<block type="gamepad_getProperty_Boolean" id="islt%Uk*Jmfn6eP%*co4">
+<field name="IDENTIFIER">gamepad1</field>
+<field name="PROP">A</field>
+<data>{"IDENTIFIER":"gamepad1"}</data>
+</block>
+</value>
+<statement name="DO0">
+<block type="controls_flow_statements" id=".ZLmVgpU_xpFrduR/h*6" disabled="true">
+<field name="FLOW">BREAK</field>
+<data>{"block_warning_hidden":true,"block_warning_text":"Warning: This block may only be used within a loop."}</data>
+</block>
+</statement>
+<next>
+<block type="linearOpMode_sleep_Number" id="CFdH4?)`|MuQdoRXMOw6">
+<value name="MILLISECONDS">
+<shadow type="math_number" id="U]a.^FkmGIa5bA/A6/`E">
+<field name="NUM">2000</field>
+</shadow>
+</value>
+<next>
+<block type="servo_setProperty_Number" id="5#UU.O0L{r4wLH+tYF0h">
+<field name="IDENTIFIER">_0AsServo</field>
+<field name="PROP">Position</field>
+<data>{"IDENTIFIER":"0"}</data>
+<value name="VALUE">
+<shadow type="math_number" id="Fy+m5-FxvCqMz(1D5{^n">
+<field name="NUM">359</field>
+</shadow>
+</value>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</next>
+</block>
+</xml>
+<?xml version='1.0' encoding='UTF-8' standalone='yes' ?>
+<Extra>
+<OpModeMeta flavor="TELEOP" group="" autoTransition="" />
+<Enabled value="true" />
+</Extra>
