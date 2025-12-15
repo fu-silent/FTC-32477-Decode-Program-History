@@ -9,6 +9,12 @@ package org.firstinspires.ftc.teamcode;
  */
 public class RobotConstants_2_3 {
     
+    // 注意：请务必根据实际机器人测量这些数值
+    // ========== 机器人物理尺寸 (毫米 mm) ==========
+    public static final double WHEEL_DIAMETER_MM = 101.6; // 4英寸
+    public static final double TRACK_WIDTH_MM = 390.0;    // 横向轮距
+    public static final double WHEEL_BASE_MM = 336.0;     // 纵向轴距
+
     // ========== 硬件名称配置 ==========
     
     // 底盘电机

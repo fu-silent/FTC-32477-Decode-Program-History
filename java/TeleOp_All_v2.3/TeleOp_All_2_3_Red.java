@@ -12,23 +12,16 @@ import com.qualcomm.hardware.rev.RevHubOrientationOnRobot;
 import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 /**
- * TeleOp v2.3.0 - 无头模式 (Field-Centric) 集成版
- * * 新增功能：
- * - 支持有头/无头模式切换 (按 X 键)
- * - 支持 IMU 航向重置 (按 Back 键)
- * * 保留功能：
- * - 线性/非线性驱动切换 (按 Y 键)
- * - 所有发射、装填、自动转向原有逻辑
+ * TeleOp v2.3.0 Red - 红队版本
+ * - 自动转向目标：45度 (逆时针/向左，假设初始朝向0度，这里保留原逻辑，原代码为AUTO_TURN_TARGET_RIGHT = 45.0)
+ *   注意：在FTC坐标系中，通常逆时针为正。如果45度代表向右，请根据实际IMU安装方向确认。
+ *   此处保留原代码逻辑：AUTO_TURN_TARGET_RIGHT = 45.0
  */
-@TeleOp(name = "TeleOp_All_2_3", group = "TeleOp")
-public class TeleOp_All_2_3 extends LinearOpMode {
+@TeleOp(name = "TeleOp_All_2_3_Red", group = "TeleOp")
+public class TeleOp_All_2_3_Red extends LinearOpMode {
 
     // ========== 内部类：常数管理 ==========
     class Constants {
-        final double WHEEL_DIAMETER_MM = 101.6; // 4英寸 = 101.6mm
-        final double TRACK_WIDTH_MM = 390.0;    // 横向轮距 390mm
-        final double WHEEL_BASE_MM = 336.0;     // 纵向轴距 336mm
-
         // 硬件名称
         final String CHASSIS_MOTOR_FRONT_LEFT_NAME = "lf";
         final String CHASSIS_MOTOR_FRONT_RIGHT_NAME = "rf";
@@ -74,7 +67,7 @@ public class TeleOp_All_2_3 extends LinearOpMode {
         final double AUTO_TURN_P_GAIN = 0.1;
         final double AUTO_TURN_I_GAIN = 0.0;
         final double AUTO_TURN_D_GAIN = 0.005;
-        final double AUTO_TURN_TARGET_RIGHT = 45.0;
+        final double AUTO_TURN_TARGET_RIGHT = 45.0; // 红队目标角度
 
         // 手柄震动
         final int RUMBLE_DURATION_MS = 200;
@@ -466,7 +459,7 @@ public class TeleOp_All_2_3 extends LinearOpMode {
         void displayFull(String runtime, int targetRPM, double s1RPM, double s2RPM,
                          boolean atSpeed, String chassisMode, String intakeStatus, String loadStatus,
                          double heading, boolean autoTurning) {
-            telemetry.addLine("========== TeleOp v2.3 ==========");
+            telemetry.addLine("========== TeleOp v2.3 Red ==========");
             telemetry.addData("运行时间", runtime);
 
             telemetry.addLine("\n--- 发射系统 ---");
@@ -533,7 +526,7 @@ public class TeleOp_All_2_3 extends LinearOpMode {
             return;
         }
 
-        telemetry.addData("状态", "准备就绪 (v2.3 无头模式集成)");
+        telemetry.addData("状态", "准备就绪 (v2.3 Red 无头模式集成)");
         telemetry.update();
 
         waitForStart();
